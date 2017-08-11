@@ -23,12 +23,13 @@ class AssistanceLinks:
         embed.description = "The purpose of this cog is to quickly provide useful links on the 3DS Homebrew discord server."
         embed.add_field(name="Where can I download this?",value="You can download it from the github [here](https://github.com/PhazonicRidley/My-Cog).")
         await self.bot.say(embed=embed)
+	
     @commands.command(pass_context=True)
     async def ub9s(self, ctx):
         """Boot9Strap updating guide link"""
         await self.bot.delete_message(ctx.message)
         embed = discord.Embed(title="How to update boot9strap", color=1710847)
-        embed.description = "You can use [this](https://3ds.guide/updating-b9s) guide to update boot9strap to the latest version"
+        embed.description = "You can use [this](https://3ds.guide/updating-b9s) guide to update boot9strap to the latest version."
         embed.set_author(name="Plailect")
         embed.set_thumbnail(url="https://avatars3.githubusercontent.com/u/16979510?v=48&s=500")
         await self.bot.say("", embed=embed)
