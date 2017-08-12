@@ -46,7 +46,7 @@ class AssistanceLinks:
         """Guide for changeing the region on 3ds"""
         await self.bot.delete_message(ctx.message)
         embed = discord.Embed(title="How to change the region on your 3ds", color=16750848)
-        embed.description = "You can use [this](https://3ds.guide/region-changing)"
+        embed.description = "You can use [this](https://3ds.guide/region-changing) guide to change the region of your 3ds"
         embed.set_thumbnail(url="https://avatars3.githubusercontent.com/u/16979510?v=48&s=500")
         embed.set_author(name="Plailect")
         await self.bot.say("", embed=embed)
