@@ -52,7 +52,7 @@ class AssistanceLinks:
         await self.bot.say("", embed=embed)
     @commands.command(pass_context=True)
     async def Luma(self, ctx):
-        """LInks to Luma3ds versions 7.0.5, 7.1, and 8.1.1"""
+        """Links to Luma3ds versions 7.0.5, 7.1, and 8.1.1"""
         await self.bot.delete_message(ctx.message)
         embed = discord.Embed(title="Luma3ds download links", color=65535)
         embed.description = "Here are links to various Luma3ds versions make sure you click on the right version"
@@ -62,6 +62,27 @@ class AssistanceLinks:
         embed.add_field(name="Luma3ds version 7.1", value="You can download Luma3ds 7.1 [here](https://github.com/AuroraWright/Luma3DS/releases/tag/v7.1) please note that this version of Luma is only for boot9strap **1.0** users.")
         embed.add_field(name="Luma3ds version 8.1.1", value="You can download Luma3ds version 8.1.1 [here](https://github.com/AuroraWright/Luma3DS/releases/tag/v8.1.1) this is the lastest version of Luma.")
         await self.bot.say("", embed=embed)
+    @commands.command(pass_context=True)
+    async def terms(self,ctx):
+        """Link to Zeta's website; the information tab"""
+        await self.bot.delete_message(ctx.message)
+        embed = discord.Embed(title="3ds Hacking Terms", color=52224)
+        embed.description ="Go [here](https://zetadesigns.github.io/info.html) to learn some basic terms about 3ds hacking."
+        embed.set_author(name="Zeta")
+        embed.set_thumbnail(url="https://images-ext-1.discordapp.net/external/ouzBzyjEx0Xn2yh7rJ798UK3E543FDcl1S2xtxMxttw/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/186474714124910592/6c0bd4dc9c043fe35c4b5f08dcdfaa80.webp?width=250&height=250")
+        await self.bot.say("", embed=embed)
+    @commands.command(pass_context=True)
+    async def pokemon(self,ctx):
+        """Pokemon game related guides"""
+        await self.bot.delete_message(ctx.message)
+        embed = discord.Embed(title="Here are some guides on how to randomize Pokemon games", color=10079487)
+        embed.description = "These guides will help you randomize pokemon games and injecting pokemon prism save"
+        embed.set_author(name="Slade and Zeta")
+        embed.add_field(name="Randomizing a Pokemon game (CIA)",value="Go [here](https://zetadesigns.github.io/randomizing-cia.html) if you want to know how to randomize a CIA pokemon game.")
+        embed.add_field(name="Randomizing a Pokemon game (LayeredFS)", value="Go [here](https://zetadesigns.github.io/randomizing-layeredfs.html) if want to randomize your pokemon game without creatingn a new cia.")
+        embed.add_field(name="Injecting Pokemon Prism Save", value="Go [here](https://zetadesigns.github.io/injecting_prism.html) to inject pokemon prism saves.")
+        await self.bot.say("", embed=embed)      
+
         
 
 def setup(bot):
