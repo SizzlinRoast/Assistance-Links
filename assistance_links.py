@@ -50,7 +50,7 @@ class AssistanceLinks:
         embed.set_thumbnail(url="https://avatars3.githubusercontent.com/u/16979510?v=48&s=500")
         embed.set_author(name="Plailect")
         await self.bot.say("", embed=embed)
-    @commands.command(pass_context=True)
+    @commands.command(aliases=['luma'], pass_context=True)
     async def Luma(self, ctx):
         """Links to Luma3ds versions 7.0.5, 7.1, and 8.1.1"""
         await self.bot.delete_message(ctx.message)
@@ -60,9 +60,8 @@ class AssistanceLinks:
         embed.set_thumbnail(url="https://gbatemp.net/attachments/luma3dsalt-png.46691/")
         embed.add_field(name="Luma3ds version 7.0.5", value="You can download Luma3ds 7.0.5 [here](https://github.com/AuroraWright/Luma3DS/releases/tag/v7.0.5).please note that this version of Luma is for ***arm9loaderhax users only***.")
         embed.add_field(name="Luma3ds version 7.1", value="You can download Luma3ds 7.1 [here](https://github.com/AuroraWright/Luma3DS/releases/tag/v7.1) please note that this version of Luma is only for boot9strap **1.0** users.")
-        embed.add_field(name="Luma3ds version 8.1.1", value="You can download Luma3ds version 8.1.1 [here](https://github.com/AuroraWright/Luma3DS/releases/tag/v8.1.1) this is the lastest version of Luma.")
+        embed.add_field(name="Latest Luma3ds version", value="You can download the latest Luma3ds version [here](https://github.com/AuroraWright/Luma3DS/releases/latest).")
         await self.bot.say("", embed=embed)
-    @commands.command(pass_context=True)
     async def terms(self,ctx):
         """Link to Zeta's website; the information tab"""
         await self.bot.delete_message(ctx.message)
