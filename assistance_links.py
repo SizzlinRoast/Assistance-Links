@@ -20,6 +20,7 @@ class AssistanceLinks:
         """About this cog"""
         await self.bot.delete_message(ctx.message)
         embed = discord.Embed(title= "What is this cog for?")
+        embed.set_author(name="PhazonicRidley")
         embed.description = "The purpose of this cog is to quickly provide useful links on the 3DS Homebrew discord server."
         embed.add_field(name="Where can I download this?",value="You can download it from the github [here](https://github.com/PhazonicRidley/Assistance-Links).")
         await self.bot.say(embed=embed)
