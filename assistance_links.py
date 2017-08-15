@@ -80,7 +80,15 @@ class AssistanceLinks:
         embed.add_field(name="Randomizing a Pokemon game (CIA)",value="Go [here](https://zetadesigns.github.io/randomizing-cia.html) if you want to know how to randomize a CIA pokemon game.")
         embed.add_field(name="Randomizing a Pokemon game (LayeredFS)", value="Go [here](https://zetadesigns.github.io/randomizing-layeredfs.html) if want to randomize your pokemon game without creatingn a new cia.")
         embed.add_field(name="Injecting Pokemon Prism Save", value="Go [here](https://zetadesigns.github.io/injecting_prism.html) to inject pokemon prism saves.")
-        await self.bot.say("", embed=embed)      
+        await self.bot.say("", embed=embed)
+    @commands.command(pass_context=True)
+    async def ct(self,ctx):
+        """"Cthulhu/Cashe Tool guide and download link"""
+        embed = discord.Embed(title="Cthulhu/Cashe Tool uses", color=993399)
+        embed.description ="Go [here](https://github.com/Ryuzaki-MrL/CacheTool/releases/tag/1.3.2) to download Cthulu/Cashe Tool. You can also download it from FBI>TitleDB"
+        embed.add_field(name="Cthulhu/CacheTool guide",value="Here are some uses and a guide for [Cthulhu/CacheTool](https://zetadesigns.github.io/cthulhu-usage.html)")
+        embed.set_author(name="Slade and Zeta(guide),Lázaro Vieira(Cthulhu)")
+        await self.bot.say("", embed=embed) 
 
         
 
