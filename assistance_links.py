@@ -90,6 +90,14 @@ class AssistanceLinks:
         embed.add_field(name="Cthulhu/CacheTool guide",value="Here are some uses and a guide for [Cthulhu/CacheTool](https://zetadesigns.github.io/cthulhu-usage.html)")
         embed.set_author(name="Slade and Zeta(guide),Lázaro Vieira(Cthulhu)")
         await self.bot.say("", embed=embed) 
+    @commands.command(aliases=['fcp'], pass_context=True)
+    async def flashcardpic(self,ctx):
+        """compatibility list for what flashcards work and what dont for ntrboothax"""
+        await self.bot.delete_message(ctx.message)
+        embed = discord.Embed(title="compatibility list for ntrboothax")
+        embed.set_image(url="https://cdn.discordapp.com/attachments/346830960668573697/346831110329860096/cart_list_V1.0.png")
+        embed.set_author(name="EdTheNerd")
+        await self.bot.say("", embed=embed)
 
         
 
