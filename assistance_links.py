@@ -84,6 +84,7 @@ class AssistanceLinks:
     @commands.command(pass_context=True)
     async def ct(self,ctx):
         """"Cthulhu/Cashe Tool guide and download link"""
+        await self.bot.delete_message(ctx.message)
         embed = discord.Embed(title="Cthulhu/Cashe Tool uses", color=993399)
         embed.description ="Go [here](https://github.com/Ryuzaki-MrL/CacheTool/releases/tag/1.3.2) to download Cthulu/Cashe Tool. You can also download it from FBI>TitleDB"
         embed.add_field(name="Cthulhu/CacheTool guide",value="Here are some uses and a guide for [Cthulhu/CacheTool](https://zetadesigns.github.io/cthulhu-usage.html)")
