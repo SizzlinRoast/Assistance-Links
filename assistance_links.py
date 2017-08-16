@@ -107,7 +107,7 @@ class AssistanceLinks:
         embed = discord.Embed(title="Luma3DS Hourlies", color=65535)
         embed.description = "You can get the Luma3DS hourlies [here](https://astronautlevel2.github.io/Luma3DS). Please keep in mind these are not always stable, and you use these at your own risk."
         embed.set_thumbnail(url="https://gbatemp.net/attachments/Luma3DSalt-png.46691/")
-        embed.set_author(name="Auroro Wright")
+        embed.set_author(name="Aurora Wright")
         await ctx.send(embed=embed)
         
     @commands.command(pass_context=True)
@@ -203,7 +203,7 @@ class AssistanceLinks:
         embed.set_thumbnail(url="https://avatars2.githubusercontent.com/u/1269164?v=4&s=460")
         await ctx.send(embed=embed)
         
-    @commands.command(aliases=['b9s'], pass_context=True)
+    @commands.command(aliases=['db9s'], pass_context=True)
     async def boot9strap(self, ctx):
         """Boot9strap"""
         await ctx.message.delete()
