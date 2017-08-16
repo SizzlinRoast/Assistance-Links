@@ -18,7 +18,7 @@ class AssistanceLinks:
     @commands.command(aliases=['pinfo'], pass_context=True)
     async def information(self, ctx):
         """About this cog"""
-        await self.bot.delete_message(ctx.message)
+        await ctx.message.delete()
         embed = discord.Embed(title= "What is this cog for?")
         embed.set_author(name="PhazonicRidley")
         embed.description = "The purpose of this cog is to quickly provide useful links on the 3DS Homebrew discord server."
@@ -27,7 +27,7 @@ class AssistanceLinks:
     @commands.command(pass_context=True)
     async def ub9s(self, ctx):
         """boot9strap updating guide link"""
-        await self.bot.delete_message(ctx.message)
+       await ctx.message.delete()
         embed = discord.Embed(title="How to update boot9strap", color=1710847)
         embed.description = "You can use [this](https://3ds.guide/updating-b9s) guide to update boot9strap to the latest version."
         embed.set_author(name="Plailect")
@@ -36,7 +36,7 @@ class AssistanceLinks:
     @commands.command(pass_context=True)
     async def ua9lh(self, ctx):
         """arm9loaderhax to boot9strap update guide"""
-        await self.bot.delete_message(ctx.message)
+        await ctx.message.delete()
         embed = discord.Embed(title="How to update from arm9loaderhax to boot9strap", color=16718362)
         embed.description = "You can use [this](https://3ds.guide/a9lh-to-b9s) guide to update from A9LH to B9S."
         embed.set_author(name="Plailect")
@@ -45,7 +45,7 @@ class AssistanceLinks:
     @commands.command(pass_context=True)
     async def region(self, ctx):
         """Guide for changeing the region on 3ds"""
-        await self.bot.delete_message(ctx.message)
+        await ctx.message.delete()
         embed = discord.Embed(title="How to change the region on your 3ds", color=16750848)
         embed.description = "You can use [this](https://3ds.guide/region-changing) guide to change the region of your 3ds"
         embed.set_thumbnail(url="https://avatars3.githubusercontent.com/u/16979510?v=48&s=500")
@@ -54,7 +54,7 @@ class AssistanceLinks:
     @commands.command(aliases=['luma'], pass_context=True)
     async def Luma(self, ctx):
         """Links to Luma3ds versions 7.0.5, 7.1, and 8.1.1"""
-        await self.bot.delete_message(ctx.message)
+        await ctx.message.delete()
         embed = discord.Embed(title="Luma3ds download links", color=65535)
         embed.description = "Here are links to various Luma3ds versions make sure you click on the right version"
         embed.set_author(name="Aurora Wright")
@@ -65,7 +65,7 @@ class AssistanceLinks:
         await self.bot.say("", embed=embed)
     async def terms(self,ctx):
         """Link to Zeta's website; the information tab"""
-        await self.bot.delete_message(ctx.message)
+        await ctx.message.delete()
         embed = discord.Embed(title="3ds Hacking Terms", color=52224)
         embed.description ="Go [here](https://zetadesigns.github.io/info.html) to learn some basic terms about 3ds hacking."
         embed.set_author(name="Zeta")
@@ -74,18 +74,18 @@ class AssistanceLinks:
     @commands.command(pass_context=True)
     async def pokemon(self,ctx):
         """Pokemon game related guides"""
-        await self.bot.delete_message(ctx.message)
+        await ctx.message.delete()
         embed = discord.Embed(title="Here are some guides on how to randomize Pokemon games", color=10079487)
         embed.description = "These guides will help you randomize pokemon games and injecting pokemon prism save"
         embed.set_author(name="Slade and Zeta")
         embed.add_field(name="Randomizing a Pokemon game (CIA)",value="Go [here](https://zetadesigns.github.io/randomizing-cia.html) if you want to know how to randomize a CIA pokemon game.")
-        embed.add_field(name="Randomizing a Pokemon game (LayeredFS)", value="Go [here](https://zetadesigns.github.io/randomizing-layeredfs.html) if want to randomize your pokemon game without creatingn a new cia.")
+        embed.add_field(name="Randomizing a Pokemon game (LayeredFS)", value="Go [here](https://zetadesigns.github.io/randomizing-layeredfs.html) if want to randomize your pokemon game without creating a new cia.")
         embed.add_field(name="Injecting Pokemon Prism Save", value="Go [here](https://zetadesigns.github.io/injecting_prism.html) to inject pokemon prism saves.")
         await self.bot.say("", embed=embed)
     @commands.command(pass_context=True)
     async def ct(self,ctx):
         """"Cthulhu/Cashe Tool guide and download link"""
-        await self.bot.delete_message(ctx.message)
+        await ctx.message.delete()
         embed = discord.Embed(title="Cthulhu/Cashe Tool uses", color=993399)
         embed.description ="Go [here](https://github.com/Ryuzaki-MrL/CacheTool/releases/tag/1.3.2) to download Cthulu/Cashe Tool. You can also download it from FBI>TitleDB"
         embed.add_field(name="Cthulhu/CacheTool guide",value="Here are some uses and a guide for [Cthulhu/CacheTool](https://zetadesigns.github.io/cthulhu-usage.html)")
@@ -94,12 +94,36 @@ class AssistanceLinks:
     @commands.command(aliases=['fcp'], pass_context=True)
     async def flashcardpic(self,ctx):
         """compatibility list for what flashcards work and what dont for ntrboothax"""
-        await self.bot.delete_message(ctx.message)
+        await ctx.message.delete()
         embed = discord.Embed(title="compatibility list for ntrboothax")
         embed.set_image(url="https://cdn.discordapp.com/attachments/346830960668573697/346831110329860096/cart_list_V1.0.png")
         embed.set_author(name="EdTheNerd")
         await self.bot.say("", embed=embed)
-
+    @commands.command(aliase=['gm9'], pass_context=True)
+    async def godmode9(self,ctx):
+        """Godmod9 download link"""
+        await ctx.message.delete()
+        embed = discord.Embed(title="GodMode9 download link", color=13395711)
+        embed = "click [here](https://github.com/d0k3/GodMode9/releases) for the latest release of GodMode9"
+        embed.set_author(name="d0k3")
+        embed.set_thumbnail(url="https://avatars2.githubusercontent.com/u/12467483?v=4&s=460")
+        await self.bot.say("", embed=embed)
+    @commands.command(pass_context=True)
+    async def fbi(self,ctx):
+        """FBI download link"""
+        await ctx.message.delete()
+        embed = discord.Embed(title="FBI download link", color=16777215)
+        embed.description = "Click [here](https://github.com/Steveice10/FBI/releases version of FBI."
+        embed.set_author(name="Steveice10")
+        embed.set_thumbnail(url="https://avatars2.githubusercontent.com/u/1269164?v=4&s=460")
+        await self.bot.say("", embed=embed)
+    @commands.command(pass_context=True)
+    async def boot9strap(self,ctx)
+        """Boot9Strap"""
+        await ctx.message.delete()
+        embed = discord.Embed(title="Boot9Strap download link", color=59110)
+        embed.description = "Click [here](https://github.com/SciresM/boot9strap/releases/download/1.2/boot9strap-1.2.zip) this is a direct link for the *normal version* of boot9strap."
+        embed.set_author(name="SciresM")
         
 
 def setup(bot):
