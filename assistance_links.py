@@ -178,9 +178,9 @@ class AssistanceLinks:
         """Compatibility list for what flashcarts do and do not work for ntrboot"""
         await ctx.message.delete()
         embed = discord.Embed(title="Compatibility List for NTRBoot")
-        embed.description = "Only the two flashcarts on the left can currently be used for NTRBoot. If your flashcart does not look exactly like one of those two, it can not currently be used for NTRBoot."
-        embed.set_image(url="https://cdn.discordapp.com/attachments/346830960668573697/346831110329860096/cart_list_V1.0.png")
-        embed.set_author(name="EdTheNerd")
+        embed.description = "Only the flashcarts on the left can currently be used for NTRBoot. If your flashcart does not look exactly like one of those, it can not currently be used for NTRBoot."
+        embed.set_image(url="https://cdn.discordapp.com/attachments/346830960668573697/350842296075419648/ntrboot_checklist.png")
+        embed.set_author(name="EdTheNerd,Jisagi")
         await ctx.send(embed=embed)
         
     @commands.command(aliases=['gm9'], pass_context=True)
