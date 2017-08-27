@@ -179,7 +179,7 @@ class AssistanceLinks:
         await ctx.message.delete()
         embed = discord.Embed(title="Compatibility List for NTRBoot")
         embed.description = "Only the flashcarts on the left can currently be used for NTRBoot. If your flashcart does not look exactly like one of those, it can not currently be used for NTRBoot."
-        embed.set_image(url="https://github.com/PhazonicRidley/Assistance-Links/blob/master/flashcarts.png")
+        embed.set_image(url="https://raw.githubusercontent.com/PhazonicRidley/Assistance-Links/master/flashcarts.png")
         embed.set_author(name="EdTheNerd,Jisagi")
         await ctx.send(embed=embed)
         
