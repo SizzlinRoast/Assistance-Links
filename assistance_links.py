@@ -217,21 +217,17 @@ class AssistanceLinks:
         """themely download link"""
         await ctx.message.delete()
         embed = discord.Embed(title="Themely download link", color=9699539)
-        embed.description = "You can get Themely [here](https://github.com/ihaveamac/Themely/releases/latest). We recommend you to get themes from [Theme Plaza](https://themeplaza.eu/themes) or [3dsthem.es Archive](http://3dsthemesarchive.site/?type=themes). We don't recommend you to use 3dsthem.es and Erman's closed source Themely because he has went anti-user."
+        embed.description = "You can get Themely [here](https://github.com/ihaveamac/Themely/releases/latest). We recommend you to get themes from [Theme Plaza](https://themeplaza.eu/themes) or [3dsthem.es Archive](http://3dsthemesarchive.site/?type=themes). We don't recommend you to use 3dsthem.es and Erman's closed source Themely because he has become anti-user."
         embed.set_author(name="ErmanSayin and ihaveamac")
         embed.set_thumbnail(url="https://github.com/ihaveamac/Themely/raw/master/meta/banner_3ds.png")
         await ctx.send(embed=embed)
 
     @commands.command(pass_context=True)
     async def jksm(self,ctx):
-        """jksm download links cia, 3dsx, rosalina"""
+        """JKSM Download Links"""
         await ctx.message.delete()
-        embed = discord.Embed(title="JKSM download links", color=16777215)
-        embed.description = "Here are the download links for JKSM aka JK's save manager."
-        embed.add_field(name="Download Links", value="""
-        [CIA Version](https://github.com/J-D-K/JKSM/raw/master/JKSM.cia)
-[3dsx/Hax Version](https://github.com/J-D-K/JKSM/raw/master/JKSM.3dsx)
-[Rosalina Version](https://github.com/Phalk/JKSM/releases/latest)""")
+        embed = discord.Embed(title="JKSM Download Links", color=16777215)
+        embed.description = "You can download the CIA version of JSKM [here](https://github.com/J-D-K/JKSM/raw/master/JKSM.cia), the 3dsx/hax version [here](https://github.com/J-D-K/JKSM/raw/master/JKSM.3dsx), or the Rosalina compatible 3dsx [here](https://github.com/Phalk/JKSM/releases/latest)."
         embed.set_author(name="J-D-K")
         await ctx.send(embed=embed)
 
