@@ -219,7 +219,7 @@ class AssistanceLinks:
             await ctx.message.delete()
             embed = discord.Embed(title="How do I Install Themes?", color=9699539)
             embed.description = "You can use [Themely](https://github.com/ihaveamac/Themely/releases/latest) or the newer [Anemone](https://github.com/astronautlevel2/Anemone3DS/releases/latest) to install themes."
-            embed.set_author(name="ErmanSaying and ihaveamac (Themely)")
+            embed.set_author(name="ErmanSayin and ihaveamac (Themely)")
             embed.set_footer(text="astronautlevel2 and daedreth (Anemone)")
             embed.set_thumbnail(url="https://github.com/astronautlevel2/Anemone3DS/raw/master/meta/banner.png")
             await ctx.send(embed=embed)
