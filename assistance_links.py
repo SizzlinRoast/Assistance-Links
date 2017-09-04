@@ -235,7 +235,7 @@ class AssistanceLinks:
     async def anemone(self,ctx):
         """Anemone download link"""
         await ctx.message.delete()
-        embed = discord.Embed(title="Where can I Download Anemone?, color=9699539)
+        embed = discord.Embed(title="Where can I Download Anemone?", color=9699539)
         embed.description = "You can get Anemone [here](https://github.com/astronautlevel2/Anemone3DS/releases/latest). You can get themes from [Theme Plaza](https://themeplaza.eu/themes) or [3dsthem.es Archive](http://3dsthemesarchive.site/?type=themes)."
         embed.set_author(name="astronautlevel2 and daedreth")
         embed.set_thumbnail(url="https://github.com/astronautlevel2/Anemone3DS/raw/master/meta/banner.png")
