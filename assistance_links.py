@@ -215,11 +215,13 @@ class AssistanceLinks:
     @commands.group(pass_context=True)
     async def theme(self,ctx):
         """Theme installers"""
-        await ctx.message.delete()
-        embed = discord.Embed(title="How do I Install Themes?", color=9699539)
-        embed.description = "You can use [Themely](https://github.com/ihaveamac/Themely/releases/latest) or the newer [Anemone](https://github.com/astronautlevel2/Anemone3DS/releases/latest) to install themes."
-        embed.set_author("ErmanSaying and ihaveamac (Themely)", icon_url="https://github.com/ihaveamac/Themely/raw/master/meta/banner.png")
-        embed.set_footer("astronautlevel2 and daedreth (Anemone)", icon_url="https://github.com/astronautlevel2/Anemone3DS/raw/master/meta/banner.png")
+        if ctx.invoked_subcommand is None:
+            await ctx.message.delete()
+            embed = discord.Embed(title="How do I Install Themes?", color=9699539)
+            embed.description = "You can use [Themely](https://github.com/ihaveamac/Themely/releases/latest) or the newer [Anemone](https://github.com/astronautlevel2/Anemone3DS/releases/latest) to install themes."
+            embed.set_author("ErmanSaying and ihaveamac (Themely)")
+            embed.set_thumbnail(text="astronautlevel2 and daedreth (Anemone)", icon_url="https://github.com/astronautlevel2/Anemone3DS/raw/master/meta/banner.png")
+            await ctx.send(embed=embed)
 
     @theme.command(pass_context=True)
     async def themely(self,ctx):
