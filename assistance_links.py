@@ -1,4 +1,5 @@
 import discord
+import re
 from discord.ext import commands
 
 '''General commands to use for 3DS assistance.'''
