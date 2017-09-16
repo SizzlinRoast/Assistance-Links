@@ -56,19 +56,30 @@ class AssistanceLinks:
         await ctx.send(embed=embed)
         
     @commands.group(pass_context=True)
-    async def luma(self, ctx):
+    async def luma(self, ctx, *, msg = ""):
         """Links to Luma3DS versions 7.0.5, 7.1, and 8.1.1"""
         if ctx.invoked_subcommand is None:
             await ctx.message.delete()
-            embed = discord.Embed(title="Luma3DS download links", color=65535)
-            embed.description = "You can get luma 7.0.5, 7.1, and/or 8.1.1 below"
-            embed.set_author(name="Aurora Wright")
-            embed.set_thumbnail(url="https://gbatemp.net/attachments/Luma3DSalt-png.46691/")
-            embed.add_field(name="Luma3DS 7.0.5", value="You can download Luma3DS 7.0.5 [here](https://github.com/AuroraWright/Luma3DS/releases/tag/v7.0.5). Please keep in mind that this version will only work for A9LH.")
-            embed.add_field(name="Luma3DS 7.1", value="You can download Luma3DS 7.1 [here](https://github.com/AuroraWright/Luma3DS/releases/tag/v7.1). Please keep in mind this version will only work for B9S 1.0.")
-            embed.add_field(name="Luma3DS 8.1.1", value="You can download the latest Luma3DS version [here](https://github.com/AuroraWright/Luma3DS/releases/tag/v8.1.1). Please keep in mind this version will only work for B9S 1.2.")
-            embed.add_field(name="Latest Luma", value="You can always get the absolute latest version of Luma3DS [here](https://github.com/AuroraWright/Luma3DS/releases/latest). Please keep in mind you will need the latest version of B9S to be able to use it.")
-            await ctx.send(embed=embed)
+            if msg:
+                pattern = re.compile("\d\.\d\.?\d?")
+                if pattern.match(msg):
+                    embed = discord.Embed(title="Luma3DS v" + msg, color=65535)
+                    embed.description = "You can download Luma3DS v" + msg + " from [here](https://github.com/AuroraWright/Luma3DS/releases/tag/v"+msg+")."
+                    embed.set_author(name = "Aurora Wright")
+                    embed.set_thumbnail(url="https://gbatemp.net/attachments/Luma3DSalt-png.46691/")
+                    await ctx.send(embed=embed)
+                else:
+                    await ctx.send("Wrong format of version given")
+            else:
+                embed = discord.Embed(title="Luma3DS download links", color=65535)
+                embed.description = "You can get luma 7.0.5, 7.1, and/or 8.1.1 below"
+                embed.set_author(name="Aurora Wright")
+                embed.set_thumbnail(url="https://gbatemp.net/attachments/Luma3DSalt-png.46691/")
+                embed.add_field(name="Luma3DS 7.0.5", value="You can download Luma3DS 7.0.5 [here](https://github.com/AuroraWright/Luma3DS/releases/tag/v7.0.5). Please keep in mind that this version will only work for A9LH.")
+                embed.add_field(name="Luma3DS 7.1", value="You can download Luma3DS 7.1 [here](https://github.com/AuroraWright/Luma3DS/releases/tag/v7.1). Please keep in mind this version will only work for B9S 1.0.")
+                embed.add_field(name="Luma3DS 8.1.1", value="You can download the latest Luma3DS version [here](https://github.com/AuroraWright/Luma3DS/releases/tag/v8.1.1). Please keep in mind this version will only work for B9S 1.2.")
+                embed.add_field(name="Latest Luma", value="You can always get the absolute latest version of Luma3DS [here](https://github.com/AuroraWright/Luma3DS/releases/latest). Please keep in mind you will need the latest version of B9S to be able to use it.")
+                await ctx.send(embed=embed)
         
     @luma.command(pass_context=True)
     async def a9lh(self, ctx):
