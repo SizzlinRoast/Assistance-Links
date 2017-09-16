@@ -75,7 +75,7 @@ class AssistanceLinks:
         """Links to Luma3DS version 7.0.5"""
         await ctx.message.delete()
         embed = discord.Embed(title="Luma3DS 7.0.5", color=65535)
-        embed.description = "You can download Luma3DS 7.0.5 [here](https://github.com/AuroraWright/releases/tag/v7.0.5). Please keep in mind this version will only work for A9LH."
+        embed.description = "You can download Luma3DS 7.0.5 [here](https://github.com/AuroraWright/Luma3DS/releases/tag/v7.0.5). Please keep in mind this version will only work for A9LH."
         embed.set_thumbnail(url="https://gbatemp.net/attachments/Luma3DSalt-png.46691/")
         embed.set_author(name="Aurora Wright")
         await ctx.send(embed=embed)
