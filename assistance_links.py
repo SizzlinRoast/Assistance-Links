@@ -56,7 +56,7 @@ class AssistanceLinks:
         await ctx.send(embed=embed)
         
     @commands.group(pass_context=True)
-    async def luma(self, ctx):
+    async def luma(self, ctx, *, msg = ""):
         """Links to Luma3DS versions 7.0.5, 7.1, and 8.1.1"""
         if ctx.invoked_subcommand is None:
             await ctx.message.delete()
