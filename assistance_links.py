@@ -224,29 +224,7 @@ class AssistanceLinks:
         embed.set_author(name="SciresM")
         await ctx.send(embed=embed)
         
-    @commands.group(pass_context=True)
-    async def theme(self,ctx):
-        """Theme installers"""
-        if ctx.invoked_subcommand is None:
-            await ctx.message.delete()
-            embed = discord.Embed(title="How do I Install Themes?", color=9699539)
-            embed.description = "You can use [Themely](https://github.com/ihaveamac/Themely/releases/latest) or the newer [Anemone](https://github.com/astronautlevel2/Anemone3DS/releases/latest) to install themes."
-            embed.set_author(name="ErmanSayin and ihaveamac (Themely)")
-            embed.set_footer(text="astronautlevel2 and daedreth (Anemone)")
-            embed.set_thumbnail(url="https://github.com/astronautlevel2/Anemone3DS/raw/master/meta/banner.png")
-            await ctx.send(embed=embed)
-
-    @theme.command(pass_context=True)
-    async def themely(self,ctx):
-        """Themely download link"""
-        await ctx.message.delete()
-        embed = discord.Embed(title="Where can I Download Themely", color=9699539)
-        embed.description = "You can get Themely [here](https://github.com/ihaveamac/Themely/releases/latest). We recommend you to get themes from [Theme Plaza](https://themeplaza.eu/themes) or [3dsthem.es Archive](http://3dsthemesarchive.site/?type=themes)."
-        embed.set_author(name="ErmanSayin and ihaveamac")
-        embed.set_thumbnail(url="https://github.com/ihaveamac/Themely/raw/master/meta/banner_3ds.png")
-        await ctx.send(embed=embed)
-        
-    @theme.command(pass_context=True)
+    @commands.command(pass_context=True)
     async def anemone(self,ctx):
         """Anemone download link"""
         await ctx.message.delete()
