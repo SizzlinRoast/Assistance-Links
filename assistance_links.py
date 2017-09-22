@@ -36,7 +36,7 @@ class AssistanceLinks:
         embed.set_thumbnail(url="https://avatars3.githubusercontent.com/u/16979510?v=48&s=500")
         await ctx.send(embed=embed)
         
-    @commands.command(pass_context=True)
+    @commands.command(aliases=['atob'], pass_context=True)
     async def ua9lh(self, ctx):
         """arm9loaderhax to boot9strap update guide"""
         await ctx.message.delete()
@@ -224,7 +224,7 @@ class AssistanceLinks:
         embed.set_author(name="SciresM")
         await ctx.send(embed=embed)
         
-    @commands.command(pass_context=True)
+    @commands.command(aliases=['theme'], pass_context=True)
     async def anemone(self,ctx):
         """Anemone download link"""
         await ctx.message.delete()
