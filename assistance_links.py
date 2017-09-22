@@ -26,7 +26,7 @@ class AssistanceLinks:
         embed.add_field(name="Where can I download this?", value="You can download it from the github [here](https://github.com/PhazonicRidley/Assistance-Links).")
         await ctx.send(embed=embed)
         
-    @commands.command(aliases=['updateb9s'], pass_context=True)
+    @commands.command(pass_context=True)
     async def ub9s(self, ctx):
         """boot9strap updating guide link"""
         await ctx.message.delete()
