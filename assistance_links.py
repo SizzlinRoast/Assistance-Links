@@ -21,7 +21,7 @@ class AssistanceLinks:
         """About this cog"""
         await ctx.message.delete()
         embed = discord.Embed(title= "What is this cog for?")
-        embed.set_author(name="PhazonicRidley")
+        embed.set_author(name="PhazonicRidley#1432 (main dev) and Griffin#2329 (fixer of mistakes -.-)")
         embed.description = "The purpose of this cog is to quickly provide useful links on the 3DS Homebrew discord server."
         embed.add_field(name="Where can I download this?", value="You can download it from the github [here](https://github.com/PhazonicRidley/Assistance-Links).")
         await ctx.send(embed=embed)
@@ -192,7 +192,7 @@ class AssistanceLinks:
         embed = discord.Embed(title="Compatibility List for NTRBoot")
         embed.description = "Only the flashcarts on the left can currently be used for NTRBoot. If your flashcart does not look exactly like one of those, it can not currently be used for NTRBoot."
         embed.set_image(url="https://raw.githubusercontent.com/PhazonicRidley/Assistance-Links/master/flashcarts.png")
-        embed.set_author(name="EdTheNerd,Jisagi")
+        embed.set_author(name="EdTheNerd (Creator), Jisagi (Editor)")
         await ctx.send(embed=embed)
         
     @commands.command(aliases=['gm9'], pass_context=True)
@@ -217,18 +217,18 @@ class AssistanceLinks:
         
     @commands.command(aliases=['db9s'], pass_context=True)
     async def boot9strap(self, ctx):
-        """Boot9strap"""
+        """Boot9strap Download Link"""
         await ctx.message.delete()
         embed = discord.Embed(title="Boot9strap Download Link", color=59110)
         embed.description = "Click [here](https://github.com/SciresM/boot9strap/releases/download/1.2/boot9strap-1.2.zip) for a direct link for the normal version of boot9strap."
         embed.set_author(name="SciresM")
         await ctx.send(embed=embed)
-        
-    @commands.command(aliases=['theme'], pass_context=True)
+             
+    @commands.command(pass_context=True)
     async def anemone(self,ctx):
         """Anemone download link"""
         await ctx.message.delete()
-        embed = discord.Embed(title="Where can I Download Anemone?", color=9699539)
+        embed = discord.Embed(title="How do i install custom themes?", color=9699539)
         embed.description = "You can get Anemone [here](https://github.com/astronautlevel2/Anemone3DS/releases/latest). You can get themes from [Theme Plaza](https://themeplaza.eu/themes) or [3dsthem.es Archive](http://3dsthemesarchive.site/?type=themes)."
         embed.set_author(name="astronautlevel2 and daedreth")
         embed.set_thumbnail(url="https://github.com/astronautlevel2/Anemone3DS/raw/master/meta/banner.png")
@@ -241,6 +241,15 @@ class AssistanceLinks:
         embed = discord.Embed(title="JKSM Download Links", color=16777215)
         embed.description = "You can download the CIA version of JSKM [here](https://github.com/J-D-K/JKSM/raw/master/JKSM.cia), the 3dsx/hax version [here](https://github.com/J-D-K/JKSM/raw/master/JKSM.3dsx), or the Rosalina compatible 3dsx [here](https://github.com/Phalk/JKSM/releases/latest)."
         embed.set_author(name="J-D-K")
+        await ctx.send(embed=embed)
+
+    @commands.command(aliases=['sc'], pass_context=True)
+    async def stockchart(self,ctx):
+        await ctx.message.delete()
+        embed = discord.Embed(title="I want CFW! What are my options?")
+        embed.description = "Here is a visual chart on what your options are if you want cfw (custom firmware) on your 3ds and you are on firmware 11.4 or above"
+        embed.set_image(url="https://cdn.discordapp.com/attachments/346830960668573697/366625577085435924/3DS_11.4_Flowchart.png")
+        embed.set_author(name="Aluminite")
         await ctx.send(embed=embed)
 
 def setup(bot):
