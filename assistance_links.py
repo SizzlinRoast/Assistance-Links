@@ -252,5 +252,12 @@ class AssistanceLinks:
         embed.set_author(name="Aluminite")
         await ctx.send(embed=embed)
 
+    @commands.command(pass_context=True)
+    async def ndscard(self,ctx):
+        await ctx.message.delete()
+        embed = discord.Embed(title= "nds-card.com, the recommended site for buying flashcards.", color=58995)
+        embed.description = "We recommend that if you are looking for a flashcard that you buy it from this site. They are trusted and reliable. NOTE: you will need to pay them via paypal or western union. <http://www.nds-card.com/>"
+        await ctx.send(embed=embed)
+
 def setup(bot):
     bot.add_cog(AssistanceLinks(bot))
