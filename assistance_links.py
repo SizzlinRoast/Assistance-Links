@@ -15,7 +15,7 @@ class AssistanceLinks:
             embed = discord.Embed(title=title, color=color)
             embed.description = text
             await ctx.send(embed=embed)
-		
+
     @commands.command(aliases=['pinfo'], pass_context=True)
     async def information(self, ctx):
         """About this cog"""
@@ -25,7 +25,7 @@ class AssistanceLinks:
         embed.description = "The purpose of this cog is to quickly provide useful links on the 3DS Homebrew discord server."
         embed.add_field(name="Where can I download this?", value="You can download it from the github [here](https://github.com/PhazonicRidley/Assistance-Links).")
         await ctx.send(embed=embed)
-        
+
     @commands.command(pass_context=True)
     async def ub9s(self, ctx):
         """boot9strap updating guide link"""
@@ -35,7 +35,7 @@ class AssistanceLinks:
         embed.set_author(name="Plailect")
         embed.set_thumbnail(url="https://avatars3.githubusercontent.com/u/16979510?v=48&s=500")
         await ctx.send(embed=embed)
-        
+
     @commands.command(aliases=['atob'], pass_context=True)
     async def ua9lh(self, ctx):
         """arm9loaderhax to boot9strap update guide"""
@@ -45,7 +45,7 @@ class AssistanceLinks:
         embed.set_author(name="Plailect")
         embed.set_thumbnail(url="https://avatars3.githubusercontent.com/u/16979510?v=48&s=500")
         await ctx.send(embed=embed)
-        
+
     @commands.command(pass_context=True)
     async def region(self, ctx):
         """Guide for region changing the 3DS"""
@@ -55,7 +55,7 @@ class AssistanceLinks:
         embed.set_thumbnail(url="https://avatars3.githubusercontent.com/u/16979510?v=48&s=500")
         embed.set_author(name="Plailect")
         await ctx.send(embed=embed)
-        
+
     @commands.group(pass_context=True)
     async def luma(self, ctx, *, msg = ""):
         """Links to Luma3DS versions 7.0.5, 7.1, and 8.1.1"""
@@ -81,7 +81,7 @@ class AssistanceLinks:
                 embed.add_field(name="Luma3DS 8.1.1", value="You can download the latest Luma3DS version [here](https://github.com/AuroraWright/Luma3DS/releases/tag/v8.1.1). Please keep in mind this version will only work for B9S 1.2.")
                 embed.add_field(name="Latest Luma", value="You can always get the absolute latest version of Luma3DS [here](https://github.com/AuroraWright/Luma3DS/releases/latest). Please keep in mind you will need the latest version of B9S to be able to use it.")
                 await ctx.send(embed=embed)
-        
+
     @luma.command(pass_context=True)
     async def a9lh(self, ctx):
         """Links to Luma3DS version 7.0.5"""
@@ -91,7 +91,7 @@ class AssistanceLinks:
         embed.set_thumbnail(url="https://gbatemp.net/attachments/Luma3DSalt-png.46691/")
         embed.set_author(name="Aurora Wright")
         await ctx.send(embed=embed)
-        
+
     @luma.command(pass_context=True)
     async def b9s10(self, ctx):
         """Links to Luma3DS version 7.1"""
@@ -101,7 +101,7 @@ class AssistanceLinks:
         embed.set_thumbnail(url="https://gbatemp.net/attachments/Luma3DSalt-png.46691/")
         embed.set_author(name="Aurora Wright")
         await ctx.send(embed=embed)
-        
+
     @luma.command(pass_context=True)
     async def b9s12(self, ctx):
         """Links to Luma3DS version 8.1.1"""
@@ -111,7 +111,7 @@ class AssistanceLinks:
         embed.set_thumbnail(url="https://gbatemp.net/attachments/Luma3DSalt-png.46691/")
         embed.set_author(name="Aurora Wright")
         await ctx.send(embed=embed)
-        
+
     @luma.command(aliases=['hourly'], pass_context=True)
     async def hourlies(self, ctx):
         """Links to the Luma3DS hourly site"""
@@ -121,7 +121,7 @@ class AssistanceLinks:
         embed.set_thumbnail(url="https://gbatemp.net/attachments/Luma3DSalt-png.46691/")
         embed.set_author(name="Aurora Wright")
         await ctx.send(embed=embed)
-        
+
     @commands.command(pass_context=True)
     async def terms(self,ctx):
         """Link to Zeta's website; the information tab"""
@@ -131,7 +131,7 @@ class AssistanceLinks:
         embed.set_author(name="Zeta")
         embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/186474714124910592/6c0bd4dc9c043fe35c4b5f08dcdfaa80.webp?width=250&height=250")
         await ctx.send(embed=embed)
-        
+
     @commands.group(pass_context=True)
     async def randomize(self,ctx):
         """Pokemon randomizing guides"""
@@ -144,7 +144,7 @@ class AssistanceLinks:
             embed.add_field(name="Randomizing a Pokemon game (LayeredFS)", value="Use [this](https://zetadesigns.github.io/randomizing-layeredfs.html) guide if want to randomize a pokemon game without reinstalling it.")
             embed.set_thumbnail(url="http://i.imgur.com/eJfVxZv.png")
             await ctx.send(embed=embed)
-            
+
     @randomize.command(pass_context=True)
     async def cia(self, ctx):
         """Randomize a Pokemon game via CIA"""
@@ -154,7 +154,7 @@ class AssistanceLinks:
         embed.description = "Use [this](https://zetadesigns.github.io/randomizing-cia.html) guide if you want to randomize a pokemon game then install it."
         embed.set_thumbnail(url="http://i.imgur.com/eJfVxZv.png")
         await ctx.send(embed=embed)
-        
+
     @randomize.command(pass_context=True)
     async def lfs(self, ctx):
         """Randomize a Pokemon game via CIA"""
@@ -164,7 +164,7 @@ class AssistanceLinks:
         embed.description = "Use [this](https://zetadesigns.github.io/randomizing-layeredfs.html) guide if want to randomize a pokemon game without reinstalling it."
         embed.set_thumbnail(url="http://i.imgur.com/eJfVxZv.png")
         await ctx.send(embed=embed)
-        
+
     @commands.command(pass_context=True)
     async def prism(self, ctx):
         """How to inject Pokemon Prism saves"""
@@ -173,7 +173,7 @@ class AssistanceLinks:
         embed.description = "You can use [this](https://zetadesigns.github.io/injecting_prism.html) guide to inject pokemon prism saves."
         embed.set_thumbnail(url="http://i.imgur.com/eJfVxZv.png")
         await ctx.send(embed=embed)
-        
+
     @commands.command(pass_context=True)
     async def ct(self,ctx):
         """"Cthulhu/Cashe Tool guide and download link"""
@@ -184,7 +184,7 @@ class AssistanceLinks:
         embed.add_field(name="How do I use it?", value="You can use [this](https://zetadesigns.github.io/cthulhu-usage.html) guide for basic use of Cthulhu/CacheTool.")
         embed.set_author(name="Slade and Zeta (guide), Lázaro Vieira (Cthulhu)")
         await ctx.send(embed=embed)
-        
+
     @commands.command(aliases=['fcp'], pass_context=True)
     async def flashcartpic(self,ctx):
         """Compatibility list for what flashcarts do and do not work for ntrboot"""
@@ -194,7 +194,7 @@ class AssistanceLinks:
         embed.set_image(url="https://raw.githubusercontent.com/PhazonicRidley/Assistance-Links/master/flashcarts.png")
         embed.set_author(name="EdTheNerd (Creator), Jisagi (Editor)")
         await ctx.send(embed=embed)
-        
+
     @commands.command(aliases=['gm9'], pass_context=True)
     async def godmode9(self,ctx):
         """Godmod9 download link"""
@@ -204,7 +204,7 @@ class AssistanceLinks:
         embed.set_author(name="d0k3")
         embed.set_thumbnail(url="https://avatars2.githubusercontent.com/u/12467483?v=4&s=460")
         await ctx.send(embed=embed)
-        
+
     @commands.command(pass_context=True)
     async def fbi(self,ctx):
         """FBI download link"""
@@ -214,7 +214,7 @@ class AssistanceLinks:
         embed.set_author(name="Steveice10")
         embed.set_thumbnail(url="https://avatars2.githubusercontent.com/u/1269164?v=4&s=460")
         await ctx.send(embed=embed)
-        
+
     @commands.command(aliases=['db9s'], pass_context=True)
     async def boot9strap(self, ctx):
         """Boot9strap Download Link"""
@@ -223,7 +223,7 @@ class AssistanceLinks:
         embed.description = "Click [here](https://github.com/SciresM/boot9strap/releases/download/1.2/boot9strap-1.2.zip) for a direct link for the normal version of boot9strap."
         embed.set_author(name="SciresM")
         await ctx.send(embed=embed)
-             
+
     @commands.command(pass_context=True)
     async def anemone(self,ctx):
         """Anemone download link"""
@@ -257,6 +257,16 @@ class AssistanceLinks:
         await ctx.message.delete()
         embed = discord.Embed(title= "nds-card.com, the recommended site for buying flashcards.", color=58995)
         embed.description = "We recommend that if you are looking for a flashcard that you buy it from this site. They are trusted and reliable. NOTE: you will need to pay them via paypal or western union. <http://www.nds-card.com/>"
+        await ctx.send(embed=embed)
+
+    @commands.command(aliases=['pins'], pass_context=True)
+    async def readpins(self,ctx):
+        await ctx.message.delete()
+        embed = discord.Embed(title="How to read pins")
+        embed.description = "Pins in Discord contain frequently accessed and useful information and files."
+        embed.add_field(name="On PC:", value="Press Ctrl+P (Cmd+P on Mac) or press the pin icon at the top right of the window.")
+        embed.add_field(name="On iOS/Android:", value="Tap the channel name at the top (or the three dots next to it on some phones) and press Pinned Messages.")
+        embed.set_image(url="https://raw.githubusercontent.com/PhazonicRidley/Assistance-Links/master/pins.png")
         await ctx.send(embed=embed)
 
 def setup(bot):
