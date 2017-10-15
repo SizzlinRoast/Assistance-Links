@@ -224,7 +224,7 @@ class AssistanceLinks:
         embed.set_author(name="SciresM")
         await ctx.send(embed=embed)
 
-    @commands.command(pass_context=True)
+    @commands.command(aliases=['theme'], pass_context=True)
     async def anemone(self,ctx):
         """Anemone download link"""
         await ctx.message.delete()
