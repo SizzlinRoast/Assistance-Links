@@ -10,11 +10,6 @@ class AssistanceLinks:
     def __init__(self, bot):
         self.bot = bot
 
-        async def simple_embed(self, text, title="", color=discord.Color.default()):
-            embed = discord.Embed(title=title, color=color)
-            embed.description = text
-            await ctx.send(embed=embed)
-
     @commands.command(aliases=['pinfo'])
     async def information(self, ctx):
         """About this cog"""
