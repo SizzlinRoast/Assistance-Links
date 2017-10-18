@@ -212,7 +212,7 @@ class AssistanceLinks:
     async def ndscard(self,ctx):
         await ctx.message.delete()
         embed = discord.Embed(title="Where Should I buy my Flashcards from?", color=58995)
-        embed.description = "We recommend that you buy flascards from [this](http://www.nds-card.com/) site. They are trusted and reliable. Please note that they must be paid via PayPal or Western Union.\nIf you are buying a flashcard for NTRBoot, the [R4i GOLD 3DS RTS](http://www.nds-card.com/proshow.asp?PageNo=2&ProID=149) is recommended."
+        embed.description = "We recommend that you buy flashcards from [this](http://www.nds-card.com/) site. They are trusted and reliable. Please note that they must be paid via PayPal or Western Union.\nIf you are buying a flashcard for NTRBoot, the [R4i GOLD 3DS RTS](http://www.nds-card.com/proshow.asp?PageNo=2&ProID=149) is recommended."
         await ctx.send(embed=embed)
 
     @commands.command(aliases=['pins'])
