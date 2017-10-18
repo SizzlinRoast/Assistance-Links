@@ -5,7 +5,6 @@ from discord.ext import commands
 '''General commands to use for 3DS assistance.'''
 
 
-
 class AssistanceLinks:
 
     def __init__(self, bot):
@@ -16,113 +15,75 @@ class AssistanceLinks:
             embed.description = text
             await ctx.send(embed=embed)
 
-    @commands.command(aliases=['pinfo'], pass_context=True)
+    @commands.command(aliases=['pinfo'])
     async def information(self, ctx):
         """About this cog"""
         await ctx.message.delete()
-        embed = discord.Embed(title= "What is this cog for?")
+        embed = discord.Embed(title="What is this cog for?")
         embed.set_author(name="PhazonicRidley#1432 (main dev) and Griffin#2329 (fixer of mistakes -.-)")
         embed.description = "The purpose of this cog is to quickly provide useful links on the 3DS Homebrew discord server."
         embed.add_field(name="Where can I download this?", value="You can download it from the github [here](https://github.com/PhazonicRidley/Assistance-Links).")
         await ctx.send(embed=embed)
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def ub9s(self, ctx):
-        """boot9strap updating guide link"""
+        """Boot9Strap Update Link"""
         await ctx.message.delete()
-        embed = discord.Embed(title="How to update boot9strap", color=1710847)
-        embed.description = "You can use [this](https://3ds.guide/updating-b9s) guide to update boot9strap to the latest version."
+        embed = discord.Embed(title="How to Update Boot9Strap", color=1710847)
+        embed.description = "You can use [this](https://3ds.guide/updating-b9s) guide to update b9s to the latest version."
         embed.set_author(name="Plailect")
         embed.set_thumbnail(url="https://avatars3.githubusercontent.com/u/16979510?v=48&s=500")
         await ctx.send(embed=embed)
 
-    @commands.command(aliases=['atob'], pass_context=True)
+    @commands.command(aliases=['atob'])
     async def ua9lh(self, ctx):
-        """arm9loaderhax to boot9strap update guide"""
+        """Arm9LoaderHax to Boot9Strap Update Link"""
         await ctx.message.delete()
-        embed = discord.Embed(title="How to update from arm9loaderhax to boot9strap", color=16718362)
+        embed = discord.Embed(title="How to Update from Arm9LoaderHax to Boot9Strap", color=16718362)
         embed.description = "You can use [this](https://3ds.guide/a9lh-to-b9s) guide to update from A9LH to B9S."
         embed.set_author(name="Plailect")
         embed.set_thumbnail(url="https://avatars3.githubusercontent.com/u/16979510?v=48&s=500")
         await ctx.send(embed=embed)
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def region(self, ctx):
-        """Guide for region changing the 3DS"""
+        """How to change 3DS Region"""
         await ctx.message.delete()
-        embed = discord.Embed(title="How to region change the 3DS", color=16750848)
-        embed.description = "You can use [this](https://3ds.guide/region-changing) guide to region change your 3DS."
+        embed = discord.Embed(title="How to Change your 3DS' Region", color=16750848)
+        embed.description = "You can use [this](https://3ds.guide/region-changing) guide to change your 3DS' region."
         embed.set_thumbnail(url="https://avatars3.githubusercontent.com/u/16979510?v=48&s=500")
         embed.set_author(name="Plailect")
         await ctx.send(embed=embed)
 
-    @commands.group(pass_context=True)
+    @commands.command()
     async def luma(self, ctx, *, msg = ""):
-        """Links to Luma3DS versions 7.0.5, 7.1, and 8.1.1"""
-        if ctx.invoked_subcommand is None:
+        """Links to Luma3ds. You can input a version number after the command to output a specific version."""
+        if msg == "hourly" or msg == "hourlies":
+            embed = discord.Embed(title="Luma3DS Hourlies", color=65535)
+            embed.description = "You can get the Luma3DS hourlies [here](https://astronautlevel2.github.io/Luma3DS). Please keep in mind these are not always stable, and you use these at your own risk."
+            embed.set_thumbnail(url="https://gbatemp.net/attachments/Luma3DSalt-png.46691/")
+            embed.set_author(name="Aurora Wright")
+            return await ctx.send(embed=embed)
+        else:
             await ctx.message.delete()
             if msg:
                 pattern = re.compile("\d\.\d\.?\d?")
                 if pattern.match(msg):
                     embed = discord.Embed(title="Luma3DS v" + msg, color=65535)
-                    embed.description = "You can download Luma3DS v" + msg + " from [here](https://github.com/AuroraWright/Luma3DS/releases/tag/v"+msg+")."
+                    embed.description = "You can download Luma3DS v{} from [here](https://github.com/AuroraWright/Luma3DS/releases/tag/v{}).".format(msg, msg)
                     embed.set_author(name = "Aurora Wright")
                     embed.set_thumbnail(url="https://gbatemp.net/attachments/Luma3DSalt-png.46691/")
                     await ctx.send(embed=embed)
                 else:
-                    await ctx.send("Wrong format of version given")
+                    await ctx.send(self.bot.bot_prefix + "Wrong format of version given")
             else:
-                embed = discord.Embed(title="Luma3DS download links", color=65535)
-                embed.description = "You can get luma 7.0.5, 7.1, and/or 8.1.1 below"
+                embed = discord.Embed(title="Luma3DS Download Link", color=65535)
+                embed.description = "You can download Luma3DS below."
                 embed.set_author(name="Aurora Wright")
-                embed.set_thumbnail(url="https://gbatemp.net/attachments/Luma3DSalt-png.46691/")
-                embed.add_field(name="Luma3DS 7.0.5", value="You can download Luma3DS 7.0.5 [here](https://github.com/AuroraWright/Luma3DS/releases/tag/v7.0.5). Please keep in mind that this version will only work for A9LH.")
-                embed.add_field(name="Luma3DS 7.1", value="You can download Luma3DS 7.1 [here](https://github.com/AuroraWright/Luma3DS/releases/tag/v7.1). Please keep in mind this version will only work for B9S 1.0.")
-                embed.add_field(name="Luma3DS 8.1.1", value="You can download the latest Luma3DS version [here](https://github.com/AuroraWright/Luma3DS/releases/tag/v8.1.1). Please keep in mind this version will only work for B9S 1.2.")
                 embed.add_field(name="Latest Luma", value="You can always get the absolute latest version of Luma3DS [here](https://github.com/AuroraWright/Luma3DS/releases/latest). Please keep in mind you will need the latest version of B9S to be able to use it.")
                 await ctx.send(embed=embed)
 
-    @luma.command(pass_context=True)
-    async def a9lh(self, ctx):
-        """Links to Luma3DS version 7.0.5"""
-        await ctx.message.delete()
-        embed = discord.Embed(title="Luma3DS 7.0.5", color=65535)
-        embed.description = "You can download Luma3DS 7.0.5 [here](https://github.com/AuroraWright/Luma3DS/releases/tag/v7.0.5). Please keep in mind this version will only work for A9LH."
-        embed.set_thumbnail(url="https://gbatemp.net/attachments/Luma3DSalt-png.46691/")
-        embed.set_author(name="Aurora Wright")
-        await ctx.send(embed=embed)
-
-    @luma.command(pass_context=True)
-    async def b9s10(self, ctx):
-        """Links to Luma3DS version 7.1"""
-        await ctx.message.delete()
-        embed = discord.Embed(title="Luma3DS 7.1", color=65535)
-        embed.description = "You can download Luma3DS 7.1 [here](https://github.com/AuroraWright/Luma3DS/releases/tag/v7.1). Please keep in mind this version will only work for B9S 1.0."
-        embed.set_thumbnail(url="https://gbatemp.net/attachments/Luma3DSalt-png.46691/")
-        embed.set_author(name="Aurora Wright")
-        await ctx.send(embed=embed)
-
-    @luma.command(pass_context=True)
-    async def b9s12(self, ctx):
-        """Links to Luma3DS version 8.1.1"""
-        await ctx.message.delete()
-        embed = discord.Embed(title="Luma3DS 8.1.1", color=65535)
-        embed.description = "You can download Luma3DS 8.1.1 [here](https://github.com/AuroraWright/Luma3DS/releases/tag/v8.1.1). Please keep in mind this version will only work for B9S 1.2."
-        embed.set_thumbnail(url="https://gbatemp.net/attachments/Luma3DSalt-png.46691/")
-        embed.set_author(name="Aurora Wright")
-        await ctx.send(embed=embed)
-
-    @luma.command(aliases=['hourly'], pass_context=True)
-    async def hourlies(self, ctx):
-        """Links to the Luma3DS hourly site"""
-        await ctx.message.delete()
-        embed = discord.Embed(title="Luma3DS Hourlies", color=65535)
-        embed.description = "You can get the Luma3DS hourlies [here](https://astronautlevel2.github.io/Luma3DS). Please keep in mind these are not always stable, and you use these at your own risk."
-        embed.set_thumbnail(url="https://gbatemp.net/attachments/Luma3DSalt-png.46691/")
-        embed.set_author(name="Aurora Wright")
-        await ctx.send(embed=embed)
-
-    @commands.command(pass_context=True)
+    @commands.command()
     async def terms(self,ctx):
         """Link to Zeta's website; the information tab"""
         await ctx.message.delete()
@@ -132,7 +93,7 @@ class AssistanceLinks:
         embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/186474714124910592/6c0bd4dc9c043fe35c4b5f08dcdfaa80.webp?width=250&height=250")
         await ctx.send(embed=embed)
 
-    @commands.group(pass_context=True)
+    @commands.group()
     async def randomize(self,ctx):
         """Pokemon randomizing guides"""
         if ctx.invoked_subcommand is None:
@@ -145,7 +106,7 @@ class AssistanceLinks:
             embed.set_thumbnail(url="http://i.imgur.com/eJfVxZv.png")
             await ctx.send(embed=embed)
 
-    @randomize.command(pass_context=True)
+    @randomize.command()
     async def cia(self, ctx):
         """Randomize a Pokemon game via CIA"""
         await ctx.message.delete()
@@ -155,7 +116,7 @@ class AssistanceLinks:
         embed.set_thumbnail(url="http://i.imgur.com/eJfVxZv.png")
         await ctx.send(embed=embed)
 
-    @randomize.command(pass_context=True)
+    @randomize.command()
     async def lfs(self, ctx):
         """Randomize a Pokemon game via CIA"""
         await ctx.message.delete()
@@ -165,7 +126,7 @@ class AssistanceLinks:
         embed.set_thumbnail(url="http://i.imgur.com/eJfVxZv.png")
         await ctx.send(embed=embed)
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def prism(self, ctx):
         """How to inject Pokemon Prism saves"""
         await ctx.message.delete()
@@ -174,7 +135,7 @@ class AssistanceLinks:
         embed.set_thumbnail(url="http://i.imgur.com/eJfVxZv.png")
         await ctx.send(embed=embed)
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def ct(self,ctx):
         """"Cthulhu/Cashe Tool guide and download link"""
         await ctx.message.delete()
@@ -185,7 +146,7 @@ class AssistanceLinks:
         embed.set_author(name="Slade and Zeta (guide), Lázaro Vieira (Cthulhu)")
         await ctx.send(embed=embed)
 
-    @commands.command(aliases=['fcp'], pass_context=True)
+    @commands.command(aliases=['fcp'])
     async def flashcartpic(self,ctx):
         """Compatibility list for what flashcarts do and do not work for ntrboot"""
         await ctx.message.delete()
@@ -195,7 +156,7 @@ class AssistanceLinks:
         embed.set_author(name="EdTheNerd (Creator), Jisagi (Editor)")
         await ctx.send(embed=embed)
 
-    @commands.command(aliases=['gm9'], pass_context=True)
+    @commands.command(aliases=['gm9'])
     async def godmode9(self,ctx):
         """Godmod9 download link"""
         await ctx.message.delete()
@@ -205,7 +166,7 @@ class AssistanceLinks:
         embed.set_thumbnail(url="https://avatars2.githubusercontent.com/u/12467483?v=4&s=460")
         await ctx.send(embed=embed)
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def fbi(self,ctx):
         """FBI download link"""
         await ctx.message.delete()
@@ -215,7 +176,7 @@ class AssistanceLinks:
         embed.set_thumbnail(url="https://avatars2.githubusercontent.com/u/1269164?v=4&s=460")
         await ctx.send(embed=embed)
 
-    @commands.command(aliases=['db9s'], pass_context=True)
+    @commands.command(aliases=['db9s'])
     async def boot9strap(self, ctx):
         """Boot9strap Download Link"""
         await ctx.message.delete()
@@ -224,17 +185,17 @@ class AssistanceLinks:
         embed.set_author(name="SciresM")
         await ctx.send(embed=embed)
 
-    @commands.command(aliases=['theme'], pass_context=True)
+    @commands.command(aliases=['theme'])
     async def anemone(self,ctx):
         """Anemone download link"""
         await ctx.message.delete()
-        embed = discord.Embed(title="How do i install custom themes?", color=9699539)
-        embed.description = "You can get Anemone [here](https://github.com/astronautlevel2/Anemone3DS/releases/latest). You can get themes from [Theme Plaza](https://themeplaza.eu/themes) or [3dsthem.es Archive](http://3dsthemesarchive.site/?type=themes)."
+        embed = discord.Embed(title="How can I Install Custom Themes?", color=9699539)
+        embed.description = "You can get Anemone [here](https://github.com/astronautlevel2/Anemone3DS/releases/latest). You can get themes from [Theme Plaza](https://themeplaza.eu/themes) or the [3dsthem.es Archive](http://3dsthemesarchive.site/?type=themes)."
         embed.set_author(name="astronautlevel2 and daedreth")
         embed.set_thumbnail(url="https://github.com/astronautlevel2/Anemone3DS/raw/master/meta/banner.png")
         await ctx.send(embed=embed)
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def jksm(self,ctx):
         """JKSM Download Links"""
         await ctx.message.delete()
@@ -243,27 +204,26 @@ class AssistanceLinks:
         embed.set_author(name="J-D-K")
         await ctx.send(embed=embed)
 
-    @commands.command(aliases=['sc'], pass_context=True)
+    @commands.command(aliases=['sc'])
     async def stockchart(self,ctx):
         await ctx.message.delete()
-        embed = discord.Embed(title="I want CFW! What are my options?")
-        embed.description = "Here is a visual chart on what your options are if you want cfw (custom firmware) on your 3ds and you are on firmware 11.4 or above"
+        embed = discord.Embed(title="What are my Options for Installing CFW?")
+        embed.description = "Here is a visual chart on your CFW installing options for 11.4 and up:"
         embed.set_image(url="https://cdn.discordapp.com/attachments/346830960668573697/366625577085435924/3DS_11.4_Flowchart.png")
         embed.set_author(name="Aluminite")
         await ctx.send(embed=embed)
 
-    @commands.command(pass_context=True)
+    @commands.command(aliases=['cards'])
     async def ndscard(self,ctx):
         await ctx.message.delete()
-        embed = discord.Embed(title= "nds-card.com, the recommended site for buying flashcards.", color=58995)
-        embed.description = "We recommend that if you are looking for a flashcard that you buy it from this site. They are trusted and reliable. NOTE: you will need to pay them via paypal or western union. <http://www.nds-card.com/>"
+        embed = discord.Embed(title="Where Should I buy my Flashcards from?", color=58995)
+        embed.description = "We recommend that you buy flascards from [this](http://www.nds-card.com/) site. They are trusted and reliable. Please note that they must be paid via PayPal or Western Union.\nIf you are buying a flashcard for NTRBoot, the [R4i GOLD 3DS RTS](http://www.nds-card.com/proshow.asp?PageNo=2&ProID=149) is recommended."
         await ctx.send(embed=embed)
 
-    @commands.command(aliases=['pins'], pass_context=True)
+    @commands.command(aliases=['pins'])
     async def readpins(self,ctx):
         await ctx.message.delete()
-        embed = discord.Embed(title="How to read pins")
-        embed.description = "Pins in Discord contain frequently accessed and useful information and files."
+        embed = discord.Embed(title="How to Check Pins")
         embed.add_field(name="On PC:", value="Press Ctrl+P (Cmd+P on Mac) or press the pin icon at the top right of the window.")
         embed.add_field(name="On iOS/Android:", value="Tap the channel name at the top (or the three dots next to it on some phones) and press Pinned Messages.")
         embed.set_image(url="https://raw.githubusercontent.com/PhazonicRidley/Assistance-Links/master/pins.png")
