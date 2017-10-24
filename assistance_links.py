@@ -224,7 +224,7 @@ class AssistanceLinks:
         embed.set_image(url="https://raw.githubusercontent.com/PhazonicRidley/Assistance-Links/master/pins.png")
         await ctx.send(embed=embed)
 
-        @commands.commands(pass_context=True)
+    @commands.commands(pass_context=True)
     async def ntrinfo(self,ctx):
         await ctx.message.delete()
         embed = discord.Embed(title="FAQ on what flashcarts are best for you")
