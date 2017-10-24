@@ -224,13 +224,12 @@ class AssistanceLinks:
         embed.set_image(url="https://raw.githubusercontent.com/PhazonicRidley/Assistance-Links/master/pins.png")
         await ctx.send(embed=embed)
 
-    @commands.command(pass_context=True)
+    @commands.command(aliases=['ni'])
     async def ntrinfo(self,ctx):
         await ctx.message.delete()
         embed = discord.Embed(title="FAQ on what flashcarts are best for you")
-        embed.add_field(name="Q: Which flashcart should I buy for NTRBoot on my unhacked 11.4+ 3DS?", value="A: The cheapest NTRBoot compatible DS flashcart is the [R4 SDHC Gold Pro 2017](http://nds-card.com/ProShow.asp?ProID=490) which costs 10 US$. After that, the general purpose recommended DS flashcart which also happens to support NTRBoot is the [R4i 3DS RTS Gold](http://nds-card.com/ProShow.asp?ProID=149) which costs 20US$")
-        embed.add_field(name="Q: Which flashcart should I buy then? Clearly the R4 SDHC Gold Pro 2017 seems like a better choice!", value="A: The R4 SDHC Gold Pro 2017 has the unwanted effect of a timebomb. This means, that once a certain year has been reached (2019-2020 in this case), the flashcart will stop functioning. You can however circumvent this by just setting the clock on your 3DS/DS back to 2017. The R4i 3DS RTS Gold does not have this behaviour. Both flashcarts can perform NTRBoot just fine, so if you only care about that, then clearly the R4 SDHC Gold Pro 2017 is a better choice due to the price.") 
-        embed.add_field(name="Q: What do DS flashcarts normally do?", value="A: DS flashcarts are normally used for playing NDS ROMs or NDS homebrew.")
+        embed.add_field(name="Which flashcarts are recommended for NTRBoot on an unhacked 11.4+ 3DS?", value="The cheapest NTRBoot compatible DS flashcart is the [R4 SDHC Gold Pro 2017](http://nds-card.com/ProShow.asp?ProID=490) which costs 10 US$. After that, the general purpose recommended DS flashcart which also happens to support NTRBoot is the [R4i 3DS RTS Gold](http://nds-card.com/ProShow.asp?ProID=149) which costs 20US$")
+        embed.add_field(name="Which flashcart should I buy?", value="The SDHC 2017 is, unfortunately, a timebomb. This means that in a couple years, the card will stop working (unless you set the date back to 2017). The RTS Gold however, is not a timebomb. A timebombed cart does not mean it cannot be flashed for NTRboot") 
         await ctx.send(embed=embed)
 
 def setup(bot):
